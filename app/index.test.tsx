@@ -17,7 +17,13 @@ const mockTheme = {
 };
 
 describe('<LoadingScreen />', () => {
-  it('renders correctly', () => {
+  const tree = render(
+    <ThemeProvider value={DarkTheme}>
+      <LoadingScreen />
+    </ThemeProvider>
+  );
+
+  it('Should renders correctly', () => {
     render(
       <ThemeProvider value={DarkTheme}>
         <LoadingScreen />
@@ -25,14 +31,18 @@ describe('<LoadingScreen />', () => {
     );
   });
 
-  it('displays the correct text', () => {
+  it('Should render a snapshot test', () => {
+    expect(tree.toJSON()).toMatchSnapshot();
+  });
+
+  it('Should displays the correct text', () => {
     render(
       <ThemeProvider value={mockTheme as Theme}>
         <LoadingScreen />
       </ThemeProvider>
     );
 
-    const textElement = screen.getByText('Animation...');
+    const textElement = screen.getByText('You can add any animation here...');
     expect(textElement).toBeTruthy();
   });
 });
