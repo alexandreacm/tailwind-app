@@ -139,6 +139,70 @@ describe('LoadingScreen', () => {
 });
 ```
 
+## Commit Messages
+
+This project uses [Commitizen](https://github.com/commitizen/cz-cli) with [Conventional Commits](https://www.conventionalcommits.org/) for standardized commit messages.
+
+### Making Commits
+
+Instead of using `git commit`, use one of these commands:
+
+**With npm:**
+
+```bash
+npm run commit
+# or
+npm run cz
+# or
+npx cz
+```
+
+**With yarn:**
+
+```bash
+yarn commit
+# or
+yarn cz
+```
+
+All of these commands will launch an interactive prompt that guides you through creating a conventional commit message.
+
+### Commit Types
+
+The conventional commit format includes:
+
+- **feat**: A new feature
+- **fix**: A bug fix
+- **docs**: Documentation only changes
+- **style**: Changes that do not affect the meaning of the code (white-space, formatting, etc.)
+- **refactor**: A code change that neither fixes a bug nor adds a feature
+- **perf**: A code change that improves performance
+- **test**: Adding missing tests or correcting existing tests
+- **chore**: Changes to the build process or auxiliary tools
+- **ci**: Changes to CI configuration files and scripts
+
+### Example
+
+```bash
+npm run commit
+# Follow the prompts to create a commit like:
+# feat: add login form component
+# fix: resolve navigation issue on Android
+# docs: update README with setup instructions
+```
+
+### Direct Git Commit (Not Recommended)
+
+If you need to commit directly with git, make sure your commit messages follow the conventional format:
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
 ## CI/CD
 
 This project uses GitHub Actions for continuous integration. The **CI Mobile** workflow runs automatically on pull requests and pushes to main branches.
