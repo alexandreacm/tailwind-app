@@ -6,7 +6,7 @@ if (typeof global !== 'undefined') {
   global.__ExpoImportMetaRegistry = new Map();
   // Mock structuredClone for Expo runtime
   if (!global.structuredClone) {
-    global.structuredClone = (obj) => JSON.parse(JSON.stringify(obj));
+    global.structuredClone = obj => JSON.parse(JSON.stringify(obj));
   }
 }
 
