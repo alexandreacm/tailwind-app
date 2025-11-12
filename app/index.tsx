@@ -10,7 +10,7 @@ export default function LoadingScreen() {
       <Text
         className={`text-lg font-bold leading-5 ${theme.dark ? 'text-telus-white' : 'text-telus-black'}`}
       >
-        Animation...
+        You can add any animation here...
       </Text>
     </View>
   );
